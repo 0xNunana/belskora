@@ -10,12 +10,9 @@ import { motion } from "framer-motion";
 import { ProductCard } from "@/components/product-card";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Separator } from "@/components/ui/separator";
-
-export default function ProductDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+import { useParams } from "next/navigation";
+export default function ProductDetailPage() {
+  const params = useParams();
   const product = products.find((p) => p.slug === params.slug);
 
   if (!product) {
