@@ -30,13 +30,13 @@ export default function AboutPage() {
   return (
     <div className="bg-background">
       <MotionWrapper>
-        <section className="bg-secondary/50 py-20 md:py-32">
+        <section className="bg-secondary/50 py-6 md:py-16">
           <div className="container mx-auto text-center px-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">
               Our Story
             </h1>
             <p className="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-foreground/80">
-              Belskora Essentials is more than a skincare brand—it's a
+              Belsk&oacute;ra Essentials is more than a skincare brand—it's a
               celebration of Ghana's natural wealth and timeless beauty rituals.
             </p>
           </div>
@@ -61,12 +61,12 @@ export default function AboutPage() {
                   From Ghana, with Love
                 </h2>
                 <p className="mt-4 text-lg text-foreground/80 leading-relaxed">
-                  Founded on the principles of authenticity and purity, Belskora
-                  Essentials began with a simple mission: to share the potent,
-                  natural ingredients of Ghana with the world. Our founder,
-                  inspired by the traditional skincare recipes passed down
-                  through generations, saw the power in local botanicals like
-                  shea, baobab, and moringa.
+                  Founded on the principles of authenticity and purity,
+                  Belsk&oacute;ra Essentials began with a simple mission: to
+                  share the potent, natural ingredients of Ghana with the world.
+                  Our founder, inspired by the traditional skincare recipes
+                  passed down through generations, saw the power in local
+                  botanicals like shea, baobab, and moringa.
                 </p>
                 <p className="mt-4 text-lg text-foreground/80 leading-relaxed">
                   We partner directly with local cooperatives, ensuring that our

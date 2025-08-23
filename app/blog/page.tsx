@@ -8,7 +8,7 @@ export default function BlogPage() {
         <section className="bg-secondary/50 py-20 md:py-32">
           <div className="container mx-auto text-center px-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">
-              The Belskora Blog
+              The Belsk&oacute;ra Blog
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-foreground/80">
               Skincare insights, ingredient spotlights, and stories from Ghana.

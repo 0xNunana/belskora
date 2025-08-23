@@ -26,7 +26,7 @@ export function SiteHeader() {
       <div className="container mx-auto flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <span className="font-bold text-lg font-headline">
-            Belskora Esentials
+            Belsk&oacute;ra Esentials
           </span>
         </Link>
 
@@ -68,7 +68,7 @@ export function SiteHeader() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <span className="font-bold text-xl font-headline">
-                    Belskora
+                    Belsk&oacute;ra
                   </span>
                 </Link>
                 <div className="flex flex-col space-y-4">

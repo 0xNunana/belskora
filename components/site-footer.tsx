@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <h3 className="font-headline text-xl font-bold mb-4">
-              Belskora Essentials
+              Belsk&oacute;ra Essentials
             </h3>
             <p className="text-muted-foreground text-sm">
               Premium natural cosmetics from the heart of Ghana.
@@ -110,8 +110,8 @@ export function SiteFooter() {
         </div>
         <div className="border-t mt-8 pt-6 text-center text-sm text-muted-foreground">
           <p>
-            &copy; {new Date().getFullYear()} Belskora Essentials. All Rights
-            Reserved.
+            &copy; {new Date().getFullYear()} Belsk&oacute;ra Essentials. All
+            Rights Reserved.
           </p>
         </div>
       </div>

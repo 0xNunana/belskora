@@ -43,7 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </p>
           <div className="flex justify-between items-center mt-4">
             <p className="text-lg font-semibold text-primary">
-              ${product.price.toFixed(2)}
+              &#8373;{product.price.toFixed(2)}
             </p>
             <Button
               size="sm"

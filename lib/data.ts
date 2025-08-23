@@ -17,7 +17,7 @@ export const products: Product[] = [
     slug: "luminescence-body-oil",
     name: "Luminescence Body Oil",
     category: "Body Oils",
-    price: 45.0,
+    price: 355.0,
     image: "/luminescence.jpg",
     dataAiHint: "cosmetic oil bottle",
     description:
@@ -34,9 +34,9 @@ export const products: Product[] = [
   {
     id: 2,
     slug: "skin-perfecting",
-    name: "skin Perfecting Body Exfoliant",
+    name: "Skin Perfecting Body Exfoliante",
     category: "Scrubs",
-    price: 32.0,
+    price: 160.0,
     image: "/perfecting.jpg",
     dataAiHint: "cosmetic scrub jar",
     description:
@@ -56,7 +56,7 @@ export const products: Product[] = [
     slug: "clair-body-wash",
     name: "Clair Body Wash",
     category: "Body Wash",
-    price: 12.0,
+    price: 250.0,
     image: "/clair.jpg",
     dataAiHint: "body wash jar",
     description:
@@ -75,7 +75,7 @@ export const products: Product[] = [
     slug: "revive-and-balance",
     name: "Revive & Balance Body Oil",
     category: "Body Oils",
-    price: 25.0,
+    price: 200.0,
     image: "/RandB.jpg",
     dataAiHint: "cosmetic spray bottle",
     description:
@@ -92,10 +92,10 @@ export const products: Product[] = [
   },
   {
     id: 5,
-    slug: "calina-body-wash",
-    name: "Calina Body Wash",
+    slug: "calma-body-wash",
+    name: "Calma Body Wash",
     category: "Body Wash",
-    price: 65.0,
+    price: 170.0,
     image: "/calina.jpg",
     dataAiHint: "body wash jar",
     description:
@@ -109,24 +109,23 @@ export const products: Product[] = [
       "Simmondsia Chinensis (Jojoba) Seed Oil",
     ],
   },
-  //   {
-  //     id: 6,
-  //     slug: "hydrating-moringa-cream",
-  //     name: "Hydrating Moringa Cream",
-  //     category: "Creams",
-  //     price: 52.0,
-  //     image: "https://placehold.co/600x600.png",
-  //     dataAiHint: "cosmetic cream jar",
-  //     description:
-  //       "A rich, velvety cream packed with moringa extract to fight signs of aging.",
-  //     longDescription:
-  //       "Experience deep, lasting hydration with our Hydrating Moringa Cream. This rich, velvety formula is powered by Moringa, the 'miracle tree', known for its potent anti-aging and nourishing properties. It helps to reduce the appearance of fine lines and leaves your skin feeling firm, plump, and deeply moisturized.",
-  //     ingredients: [
-  //       "Aqua (Water)",
-  //       "Moringa Oleifera Seed Oil",
-  //       "Glycerin",
-  //       "Theobroma Cacao (Cocoa) Seed Butter",
-  //       "Cetearyl Alcohol",
-  //     ],
-  //   },
+  {
+    id: 6,
+    slug: "rejuva-body-oil",
+    name: "Rejuva Body Oil",
+    category: "Body Oils",
+    price: 250.0,
+    image: "/rejuva.jpg",
+    dataAiHint: "cosmetic oil bottle",
+    description:
+      "A luxurious blend of shea and baobab oil to deeply nourish and hydrate your skin.",
+    longDescription:
+      "Our Revitalizing Shea Body Oil is a potent elixir designed to restore your skin's natural glow. Enriched with pure, cold-pressed shea and baobab oils from Ghana, this fast-absorbing formula provides intense hydration, improves skin elasticity, and leaves a silky, non-greasy finish. Perfect for all skin types.",
+    ingredients: [
+      "Butyrospermum Parkii (Shea) Oil",
+      "Adansonia Digitata (Baobab) Seed Oil",
+      "Vitamin E (Tocopherol)",
+      "Essential Oil Blend",
+    ],
+  },
 ];

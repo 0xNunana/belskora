@@ -15,7 +15,7 @@ export default function Home() {
       <section className="relative w-full h-[60vh] md:h-[94vh] bg-secondary/50">
         <Image
           src="/hand.jpg"
-          alt="Belskora Essentials hero background"
+          alt="Belsk&oacute;ra Essentials hero background"
           layout="fill"
           objectFit="cover"
           className=""
@@ -66,10 +66,10 @@ export default function Home() {
               </MotionWrapper>
               <MotionWrapper delay={0.2}>
                 <p className="mt-4 text-lg text-foreground/80">
-                  Belskora Essentials was born from a passion for Ghana's rich
-                  botanical heritage. We blend traditional wisdom with modern
-                  science to create skincare that is both effective and kind to
-                  your skin and the environment.
+                  Belsk&oacute;ra Essentials was born from a passion for Ghana's
+                  rich botanical heritage. We blend traditional wisdom with
+                  modern science to create skincare that is both effective and
+                  kind to your skin and the environment.
                 </p>
               </MotionWrapper>
               <MotionWrapper delay={0.4}>
