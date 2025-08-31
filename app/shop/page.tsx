@@ -6,7 +6,7 @@ export default function ShopPage() {
   return (
     <div className="bg-background">
       <MotionWrapper>
-        <section className="bg-secondary/50 py-16 md:py-24">
+        <section className="bg-secondary/50 py-6 md:py-16">
           <div className="container mx-auto text-center px-4">
             <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">
               Our Collection

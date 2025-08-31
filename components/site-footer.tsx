@@ -1,7 +1,7 @@
-import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import Image from "next/image";
 
 export function SiteFooter() {
   return (
@@ -17,13 +17,23 @@ export function SiteFooter() {
             </p>
             <div className="flex space-x-4 mt-4">
               <Link href="#" aria-label="Instagram">
-                <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+                <Image
+                  src="/instagram.svg"
+                  width={20}
+                  height={20}
+                  alt="instagram"
+                />
               </Link>
-              <Link href="#" aria-label="Facebook">
-                <Facebook className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+              <Link href="#" aria-label="Tiktok">
+                <Image src="/tiktok.svg" width={20} height={20} alt="tiktok" />
               </Link>
-              <Link href="#" aria-label="Twitter">
-                <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
+              <Link href="#" aria-label="Whatsapp">
+                <Image
+                  src="/whatsapp.svg"
+                  width={20}
+                  height={20}
+                  alt="whatsapp"
+                />
               </Link>
             </div>
           </div>
@@ -38,7 +48,7 @@ export function SiteFooter() {
                   All Products
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="#"
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -46,14 +56,7 @@ export function SiteFooter() {
                   Body Oils
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Creams
-                </Link>
-              </li>
+             
               <li>
                 <Link
                   href="#"
@@ -61,7 +64,7 @@ export function SiteFooter() {
                 >
                   Scrubs
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="md:col-span-1">

@@ -3,16 +3,39 @@ import { Separator } from "@/components/ui/separator";
 import { CheckCircle } from "lucide-react";
 import Image from "next/image";
 
+// const values = [
+//   {
+//     title: "Purity",
+//     description:
+//       "We use only the finest, all-natural ingredients sourced ethically from Ghana.",
+//   },
+//   {
+//     title: "Tradition",
+//     description:
+//       "Our formulas are inspired by generations of Ghanaian botanical wisdom.",
+//   },
+//   {
+//     title: "Efficacy",
+//     description:
+//       "Creating products that are not just clean, but deliver visible results.",
+//   },
+//   {
+//     title: "Science Backed",
+//     description:
+//       "Committed to practices that protect our planet and empower local communities.",
+//   },
+// ];
+
 const values = [
   {
     title: "Purity",
     description:
-      "We use only the finest, all-natural ingredients sourced ethically from Ghana.",
+      "We use only the finest, all‑natural ingredients sourced ethically and sustainably.",
   },
   {
     title: "Tradition",
     description:
-      "Our formulas are inspired by generations of Ghanaian botanical wisdom.",
+      "Our formulas are inspired by generations of trusted botanical wisdom.",
   },
   {
     title: "Efficacy",
@@ -20,12 +43,11 @@ const values = [
       "Creating products that are not just clean, but deliver visible results.",
   },
   {
-    title: "Sustainability",
+    title: "Science Backed",
     description:
-      "Committed to practices that protect our planet and empower local communities.",
+      "Our practices are guided by research and innovation to ensure safety, effectiveness, and sustainability.",
   },
 ];
-
 export default function AboutPage() {
   return (
     <div className="bg-background">
@@ -44,7 +66,7 @@ export default function AboutPage() {
       </MotionWrapper>
 
       <MotionWrapper delay={0.2}>
-        <section className="py-16 md:py-24">
+        <section className="py-6 md:py-12">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-lg">

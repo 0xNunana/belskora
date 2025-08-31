@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
   title: "Belskora Essentials",
-  description: "Premium natural cosmetics from Ghana.",
+  description: "Premium natural cosmetics from the heart of Ghana.",
 };
 
 export default function RootLayout({

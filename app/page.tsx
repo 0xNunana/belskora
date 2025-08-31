@@ -29,8 +29,8 @@ export default function Home() {
           </MotionWrapper>
           <MotionWrapper delay={0.2}>
             <p className="mt-4 max-w-2xl text-lg md:text-xl text-foreground/80 font-medium">
-              Discover the essence of Ghanaian beauty with our premium,
-              all-natural cosmetic products.
+              Discover the essence of beauty with our premium, all-natural
+              cosmetic products.
             </p>
           </MotionWrapper>
           <MotionWrapper delay={0.4}>
@@ -61,7 +61,7 @@ export default function Home() {
             <div className="text-left">
               <MotionWrapper>
                 <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">
-                  Rooted in Nature, Crafted with Love
+                  Rooted in Nature, Crafted with Science
                 </h2>
               </MotionWrapper>
               <MotionWrapper delay={0.2}>
