@@ -11,10 +11,17 @@ import { ProductCard } from "@/components/product-card";
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Separator } from "@/components/ui/separator";
 import { useParams } from "next/navigation";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { useCart } from "@/context/CartContext";
 export default function ProductDetailPage() {
   const params = useParams();
   const product = products.find((p) => p.slug === params.slug);
-
+  const { addToCart } = useCart();
   if (!product) {
     notFound();
   }
@@ -57,37 +64,84 @@ export default function ProductDetailPage() {
               </p>
 
               <Separator className="my-6" />
+
               <p className="text-lg text-foreground/80 leading-relaxed">
                 {product.description}
               </p>
-              <Separator className="my-6" />
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                {product.longDescription}
-              </p>
 
-              <div className="mt-6">
-                <h3 className="font-semibold text-lg mb-2">Key Ingredients:</h3>
-                <ul className="space-y-2 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-                  {product.ingredients.map((ingredient) => (
-                    <li
-                      key={ingredient}
-                      className="flex items-center text-muted-foreground"
-                    >
-                      <CheckCircle className="h-4 w-4 mr-2 text-primary/50" />
-                      {ingredient}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Separator className="my-6" />
-              {product.extra && (
-                <p className="text-lg text-foreground/80 leading-relaxed">
-                  {product.extra}
-                </p>
-              )}
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full no-underline"
+              >
+                {/* Description */}
+                <AccordionItem value="ritual">
+                  <AccordionTrigger className="no-underline">
+                    The Ritual
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="mt-4 text-lg text-foreground/80 leading-relaxed">
+                      {product.longDescription}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Ingredients */}
+                <AccordionItem value="ingredients">
+                  <AccordionTrigger>Ingredients</AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="space-y-2 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+                      {product.ingredients.map((ingredient: string) => (
+                        <li
+                          key={ingredient}
+                          className="flex items-center text-muted-foreground"
+                        >
+                          <CheckCircle className="h-4 w-4 mr-2 text-primary/50" />
+                          {ingredient}
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Extra */}
+                {product.extra && (
+                  <AccordionItem value="extra">
+                    <AccordionTrigger>What Not To Do</AccordionTrigger>
+                    <AccordionContent>
+                      <p className="text-lg text-foreground/80 leading-relaxed">
+                        {product.extra}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                )}
+
+                {product.nb && (
+                  <AccordionItem value="nb">
+                    <AccordionTrigger>Just So You Know</AccordionTrigger>
+                    <AccordionContent>
+                      <p className="text-lg text-foreground/80 leading-relaxed">
+                        {product.nb}
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                )}
+              </Accordion>
 
               <div className="mt-auto pt-8">
-                <Button size="lg" className="w-full font-bold">
+                <Button
+                  size="lg"
+                  className="w-full font-bold"
+                  onClick={() =>
+                    addToCart({
+                      id: product.id as string,
+                      name: product.name,
+                      price: product.price,
+                      image: product.image,
+                      quantity: 1,
+                    })
+                  }
+                >
                   <ShoppingCart className="mr-2 h-5 w-5" />
                   Add to Cart
                 </Button>

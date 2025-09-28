@@ -48,7 +48,10 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div
+          className="flex flex-1 items-center justify-end space-x-4"
+          title="Click to view cart"
+        >
           <Link href="/cart">
             <Button variant="ghost" size="icon" className="relative">
               <ShoppingCart className="h-5 w-5" />

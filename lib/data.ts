@@ -11,6 +11,7 @@ export interface Product {
   ingredients: string[];
   quantity?: number;
   extra?: string;
+  nb?: string;
 }
 
 export const products: Product[] = [
@@ -95,8 +96,8 @@ export const products: Product[] = [
       "EDTA",
       "Mica",
     ],
-    extra:
-      "Because this is an exfoliating product containing an AHA, some lndividuals may experience their skin peeling after a while of use, you may want to dial down on the frequency of use to avoid over exfoliation.",
+
+    nb: "Because this is an exfoliating product containing an AHA, some lndividuals may experience their skin peeling after a while of use, you may want to dial down on the frequency of use to avoid over exfoliation.",
   },
   {
     id: "4",
@@ -122,7 +123,7 @@ export const products: Product[] = [
       "Vitamin E",
     ],
     extra:
-      "Avoid or prevent excessive sun express while using this product and Keep product in a cool place away from sunligh",
+      "Avoid or prevent excessive sun express while using this product and Keep product in a cool place away from sunlight",
   },
   {
     id: "5",
@@ -177,5 +178,6 @@ export const products: Product[] = [
     extra: `Avoid or prevent excessive sun exposure while using this product and keep product in a cool place away from sunlight.
 
 Pregnant and breastfeeding women should avoid retinol or retinol derivatives products`,
+    nb: "Pregnant and breastfeeding women cannot use retinol or it’s derivatives and this product is not an exemption hence, it should be avoided",
   },
 ];
