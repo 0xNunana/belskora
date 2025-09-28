@@ -76,19 +76,13 @@ export default function ProductDetailPage() {
                 defaultValue="ingredients"
               >
                 <AccordionItem value="ingredients">
-                  <AccordionTrigger>Ingredients</AccordionTrigger>
+                  <AccordionTrigger>
+                    What's In The {product.containertype}
+                  </AccordionTrigger>
                   <AccordionContent>
-                    <ul className="space-y-2 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-                      {product.ingredients.map((ingredient: string) => (
-                        <li
-                          key={ingredient}
-                          className="flex items-center text-muted-foreground"
-                        >
-                          <CheckCircle className="h-4 w-4 mr-2 text-primary/50" />
-                          {ingredient}
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="mt-4 text-lg text-foreground/80 leading-relaxed">
+                      {product.ingredients}
+                    </p>
                   </AccordionContent>
                 </AccordionItem>
                 {/* Description */}

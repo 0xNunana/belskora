@@ -8,10 +8,11 @@ export interface Product {
   dataAiHint: string;
   description: string;
   longDescription: string;
-  ingredients: string[];
+  ingredients: string;
   quantity?: number;
   extra?: string;
   nb?: string;
+  containertype: string;
 }
 
 export const products: Product[] = [
@@ -27,18 +28,17 @@ export const products: Product[] = [
       "This body oil flawlessly brightens, fade dark spots and evens out your skin tone with a unique blend of modern skin lightening actives and fine plants oils enriched with vitamins A, B, C and  E which are essential for a radiantly firm glowing skin.",
     longDescription:
       "Simply put a few drops in the palm of your hand, rub your hands together to warm the oil, and massage it into your damp skin immediately after a shower.",
-    ingredients: [
-      "Carrot oil",
-      "Rice bran Oil",
-      "Sweet Almond Oil",
-      "Turmeric Oil",
-      "Isoamyl Laurate",
-      "Laurocapram",
-      "Undecylenoyl Phenylalanine",
-      "Phenylethyl Resorcinol",
-      "Vitamin E",
-      "Fragrance",
-    ],
+    ingredients: `Carrot oil,
+      Rice bran Oil,
+      Sweet Almond Oil,
+      Turmeric Oil,
+      Isoamyl Laurate,
+      Laurocapram,
+      Undecylenoyl Phenylalanine,
+      "Phenylethyl Resorcinol,
+      Vitamin E,
+      Fragrance`,
+    containertype: "Bottle",
     extra:
       "Avoid or prevent excessive sun exposure while using this product and keep product in a cool place away from sunlight.",
   },
@@ -54,19 +54,20 @@ export const products: Product[] = [
       "This body scrub is made to buff off dead skin cells to reveal a radiant smooth & soft blemish free firm skin. With botanicals like camwood and roselle which is full of antioxidants and AHA components together with salicylic acid creates an excellent formula for both surface and deep skin exfoliation.",
     longDescription:
       "On a wet skin, take a generous amount of scrub on your palm and apply it to your body by massaging in gentle, circular motions for two to three minutes from shoulders to toes and rinse off.  Should be used 2 to 3 times in a week.",
-    ingredients: [
-      "Sugar",
-      "Sunflower Oil",
-      "Shea butter",
-      "Emulsifying wax",
-      "Cetyl alcohol",
-      "Beeswax",
-      "Salicylic acid",
-      "Licorice root extract",
-      "Roselle flower powder",
-      "Camwood Powder",
-      "Fragrance",
-    ],
+    ingredients: `
+      Sugar,
+      Sunflower Oil,
+      Shea butter,
+      Emulsifying wax,
+      Cetyl alcohol,
+      Beeswax,
+      Salicylic acid,
+      Licorice root extract,
+      Roselle flower powder,
+      Camwood Powder,
+      Fragrance,
+    `,
+    containertype: "Jar",
   },
   {
     id: "3",
@@ -80,23 +81,23 @@ export const products: Product[] = [
       "A body wash formula made in skincare heaven to gently exfoliate dead skin from the skin's surface, retaining moisture and allowing for smoother, brighter skin with a boost of antioxidants from papaya and mulberry extracts for a glowing skin",
     longDescription:
       "Wet your skin and lather the body wash on a sponge or washcloth. Apply a generous layer all over your skin and rinse it off.For maximum benefit, let it sit on the skin for 2-3 minutes then rinse off",
-    ingredients: [
-      "Distilled water",
-      "Sodium c14-16 olefin Sulfonate",
-      "Cocamidopropyl betaine",
-      "Glycerin",
-      "Glycolic acid",
-      "Kojic acid",
-      "Mulberry extract",
-      "Papaya extract",
-      "Cationic guar",
-      "Hydroxyethylcellulose",
-      "Fragrance",
-      "Germal plus",
-      "EDTA",
-      "Mica",
-    ],
-
+    ingredients: `
+      Distilled water,
+      Sodium c14-16 olefin Sulfonate,
+      Cocamidopropyl betaine,
+      Glycerin,
+      Glycolic acid,
+      Kojic acid,
+      Mulberry extract,
+      Papaya extract,
+      Cationic guar,
+      Hydroxyethylcellulose,
+      Fragrance,
+      Germal plus,
+      EDTA,
+      Mica,
+    `,
+    containertype: "Bottle",
     nb: "Because this is an exfoliating product containing an AHA, some lndividuals may experience their skin peeling after a while of use, you may want to dial down on the frequency of use to avoid over exfoliation.",
   },
   {
@@ -112,16 +113,17 @@ export const products: Product[] = [
 
     longDescription:
       " Simply put a few drops in the palm of your hand, rub your hands together to warm the oil, and massage it into your damp skin immediately after a shower.",
-    ingredients: [
-      "Sunflower Oil",
-      "Shea Oil",
-      "Coconut Oil",
-      "Calendula Oil",
-      "Cassia Alata Oil",
-      "Olive Oil",
-      "Tea tree Oil",
-      "Vitamin E",
-    ],
+    ingredients: `
+      Sunflower Oil,
+      Shea Oil,
+      Coconut Oil,
+      Calendula Oil",
+      Cassia Alata Oil,
+      Olive Oil,
+      Tea tree Oil,
+      Vitamin E,
+    `,
+    containertype: "Bottle",
     extra:
       "Avoid or prevent excessive sun express while using this product and Keep product in a cool place away from sunlight",
   },
@@ -137,20 +139,21 @@ export const products: Product[] = [
       "As the name implies, this body wash was formulated with sensitive and irritated skin in mind to help soothe and calm skin conditions like inflammation, itchy skin, rashes etc. The goodness of this blend gives your skin the warm embrace it needs to refresh and be calm",
     longDescription:
       "Wet your skin and lather the body wash on a sponge or washcloth. Apply a generous layer all over your skin and rinse it off.For maximum benefit, let it sit on the skin for 2-3 minutes then rinse off.",
-    ingredients: [
-      "Distilled water",
-      "Cocamidopropyl betaine",
-      "Sodium C14-16 olefin Sulfonate",
-      "Glycerin",
-      "Honey",
-      "Zinc oxide",
-      "Colloidal oats",
-      "Chamomile extract",
-      "Xanthan gum",
-      "Citric acid",
-      "Germal plus",
-      "EDTA",
-    ],
+    ingredients: `
+      Distilled water,
+      Cocamidopropyl betaine,
+      Sodium C14-16 olefin Sulfonate,
+      Glycerin,
+      Honey,
+      Zinc oxide,
+      Colloidal oats,
+      Chamomile extract,
+      Xanthan gum,
+      Citric acid,
+      Germal plus,
+      EDTA,
+    `,
+    containertype: "Bottle",
   },
   {
     id: "6",
@@ -164,17 +167,18 @@ export const products: Product[] = [
       "This oil blend is an ultimate elixir for a vibrant youthful appearance. With top anti aging oils with unique fatty acid profiles that deeply moistures the skin, reducing the appearance of scars and wrinkles. Potent antioxidant astaxanthin and anti aging compound retinol firms and tones up the skin while simultaneously building up collagen with vitamin C.",
     longDescription:
       "Simply put a few drops in the palm of your hand, rub your hands together to warm the oil, and massage it into your damp skin immediately after a shower.",
-    ingredients: [
-      "Sunflower Oil",
-      "Baobab Oil",
-      "Castor Oil",
-      "Sesame Oil",
-      "Isoamyl laurate",
-      "Retinol Palmitate",
-      "Astaxanthin",
-      "Vitamin E",
-      "Fragrance",
-    ],
+    ingredients: `
+      Sunflower Oil,
+      Baobab Oil,
+      Castor Oil,
+      Sesame Oil,
+      Isoamyl laurate,
+      Retinol Palmitate,
+      Astaxanthin,
+      Vitamin E,
+      Fragrance,
+    `,
+    containertype: "Bottle",
     extra: `Avoid or prevent excessive sun exposure while using this product and keep product in a cool place away from sunlight.
 
 Pregnant and breastfeeding women should avoid retinol or retinol derivatives products`,
