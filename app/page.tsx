@@ -12,37 +12,44 @@ export default function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative w-full h-[60vh] md:h-[94vh] bg-secondary/50">
+      <section className="relative w-full h-[60vh] md:h-[100vh] bg-secondary/50">
         <Image
-          src="/hand.jpg"
+          src="/group.jpeg"
           alt="Belsk&oacute;ra Essentials hero background"
           layout="fill"
           objectFit="cover"
           className=""
           data-ai-hint="abstract background"
         />
-        <div className="container mx-auto h-full flex flex-col mt-10    items-center text-center relative z-10 px-4">
-          <MotionWrapper>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold text-primary tracking-tight">
-              Pure. Natural. Radiant.
-            </h1>
-          </MotionWrapper>
-          <MotionWrapper delay={0.2}>
-            <p className="mt-4 max-w-2xl text-lg md:text-xl text-foreground/80 font-medium">
-              Discover the essence of beauty with our premium, all-natural
-              cosmetic products.
-            </p>
-          </MotionWrapper>
-          <MotionWrapper delay={0.4}>
-            <div className="mt-8 flex gap-4">
-              <Button asChild size="lg" className="font-bold">
-                <Link href="/shop">Shop Collection</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="font-bold">
-                <Link href="/about">Our Story</Link>
-              </Button>
-            </div>
-          </MotionWrapper>
+        <div className=" mx-auto h-full flex justify-center    absolute inset-0  bottom-1/2 bg-black/30  items-center text-center z-10 px-4">
+          <div className="">
+            <MotionWrapper>
+              <h1 className="text-6xl text-white md:text-7xl lg:text-9xl font-headline font-bold  tracking-tight">
+                Pure. Natural. Radiant.
+              </h1>
+            </MotionWrapper>
+            <MotionWrapper delay={0.2}>
+              <p className="mt-4 mx-auto max-w-2xl text-xl text-center md:text-2xl text-white/80 font-medium">
+                Discover the essence of beauty with our premium, all-natural
+                cosmetic products.
+              </p>
+            </MotionWrapper>
+            <MotionWrapper delay={0.4}>
+              <div className="mt-8 flex gap-4 w-full pt-6 justify-center">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="font-bold"
+                >
+                  <Link href="/about">Our Story</Link>
+                </Button>
+                <Button asChild size="lg" className="font-bold">
+                  <Link href="/shop">Shop Collection</Link>
+                </Button>
+              </div>
+            </MotionWrapper>
+          </div>
         </div>
       </section>
 

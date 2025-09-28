@@ -3,8 +3,8 @@ import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import PaystackPop from "@paystack/inline-js";
-import { useState } from "react";
+//import PaystackPop from "@paystack/inline-js";
+import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 
 export default function CartPage() {
@@ -13,6 +13,13 @@ export default function CartPage() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
+  const [PaystackPop, setPaystackPop] = useState<any>(null);
+  useEffect(() => {
+    // Dynamically import only on client
+    import("@paystack/inline-js").then((mod) => {
+      setPaystackPop(() => mod.default);
+    });
+  }, []);
   const paystackFeeRate = parseFloat(
     process.env.NEXT_PUBLIC_PAYSTACK_FEE || "0.0195"
   );
@@ -20,6 +27,7 @@ export default function CartPage() {
   const grossAmount = total / (1 - paystackFeeRate);
 
   const handleCheckout = () => {
+    if (!PaystackPop) return;
     if (!email || !phone || !name) {
       alert("Please complete your checkout details.");
       return;
@@ -53,7 +61,7 @@ export default function CartPage() {
           ],
         },
 
-        onSuccess: async (transaction) => {
+        onSuccess: async (transaction: any) => {
           console.log("Payment success:", transaction);
 
           // verify transaction on your backend
