@@ -1,5 +1,5 @@
 export interface Product {
-  id: number;
+  id: string;
   slug: string;
   name: string;
   category: string;
@@ -9,11 +9,13 @@ export interface Product {
   description: string;
   longDescription: string;
   ingredients: string[];
+  quantity?: number;
+  extra?: string;
 }
 
 export const products: Product[] = [
   {
-    id: 1,
+    id: "1",
     slug: "luminescence-body-oil",
     name: "Luminescence Body Oil",
     category: "Body Oils",
@@ -21,18 +23,26 @@ export const products: Product[] = [
     image: "/luminescence.jpg",
     dataAiHint: "cosmetic oil bottle",
     description:
-      "A luxurious blend of shea and baobab oil to deeply nourish and hydrate your skin.",
+      "This body oil flawlessly brightens, fade dark spots and evens out your skin tone with a unique blend of modern skin lightening actives and fine plants oils enriched with vitamins A, B, C and  E which are essential for a radiantly firm glowing skin.",
     longDescription:
-      "Our Revitalizing Shea Body Oil is a potent elixir designed to restore your skin's natural glow. Enriched with pure, cold-pressed shea and baobab oils from Ghana, this fast-absorbing formula provides intense hydration, improves skin elasticity, and leaves a silky, non-greasy finish. Perfect for all skin types.",
+      "Simply put a few drops in the palm of your hand, rub your hands together to warm the oil, and massage it into your damp skin immediately after a shower.",
     ingredients: [
-      "Butyrospermum Parkii (Shea) Oil",
-      "Adansonia Digitata (Baobab) Seed Oil",
-      "Vitamin E (Tocopherol)",
-      "Essential Oil Blend",
+      "Carrot oil",
+      "Rice bran Oil",
+      "Sweet Almond Oil",
+      "Turmeric Oil",
+      "Isoamyl Laurate",
+      "Laurocapram",
+      "Undecylenoyl Phenylalanine",
+      "Phenylethyl Resorcinol",
+      "Vitamin E",
+      "Fragrance",
     ],
+    extra:
+      "Avoid or prevent excessive sun exposure while using this product and keep product in a cool place away from sunlight.",
   },
   {
-    id: 2,
+    id: "2",
     slug: "skin-perfecting",
     name: "Skin Perfecting Body Exfoliante",
     category: "Scrubs",
@@ -40,19 +50,25 @@ export const products: Product[] = [
     image: "/perfecting.jpg",
     dataAiHint: "cosmetic scrub jar",
     description:
-      "Gently exfoliate and brighten your complexion with hibiscus and fine sugar crystals.",
+      "This body scrub is made to buff off dead skin cells to reveal a radiant smooth & soft blemish free firm skin. With botanicals like camwood and roselle which is full of antioxidants and AHA components together with salicylic acid creates an excellent formula for both surface and deep skin exfoliation.",
     longDescription:
-      "Unveil smoother, more radiant skin with our Purifying Hibiscus Scrub. This gentle yet effective exfoliator uses fine sugar crystals to buff away dead skin cells, while antioxidant-rich hibiscus flower extract helps to purify pores and even out skin tone. Coconut oil ensures your skin is left feeling soft and moisturized.",
+      "On a wet skin, take a generous amount of scrub on your palm and apply it to your body by massaging in gentle, circular motions for two to three minutes from shoulders to toes and rinse off.  Should be used 2 to 3 times in a week.",
     ingredients: [
-      "Sucrose (Sugar)",
-      "Cocos Nucifera (Coconut) Oil",
-      "Hibiscus Sabdariffa Flower Extract",
-      "Cetearyl Olivate",
-      "Sorbitan Olivate",
+      "Sugar",
+      "Sunflower Oil",
+      "Shea butter",
+      "Emulsifying wax",
+      "Cetyl alcohol",
+      "Beeswax",
+      "Salicylic acid",
+      "Licorice root extract",
+      "Roselle flower powder",
+      "Camwood Powder",
+      "Fragrance",
     ],
   },
   {
-    id: 3,
+    id: "3",
     slug: "clair-body-wash",
     name: "Clair Body Wash",
     category: "Body Wash",
@@ -60,18 +76,30 @@ export const products: Product[] = [
     image: "/clair.jpg",
     dataAiHint: "body wash jar",
     description:
-      "Nourish and protect your lips with the richness of pure Ghanaian cocoa butter.",
+      "A body wash formula made in skincare heaven to gently exfoliate dead skin from the skin's surface, retaining moisture and allowing for smoother, brighter skin with a boost of antioxidants from papaya and mulberry extracts for a glowing skin",
     longDescription:
-      "Say goodbye to dry, chapped lips with our ultra-nourishing Cocoa Butter Lip Balm. Formulated with pure, unrefined cocoa butter from Ghana and a touch of sweet almond oil, this balm provides a protective barrier that locks in moisture for hours. Your lips will feel soft, smooth, and supple.",
+      "Wet your skin and lather the body wash on a sponge or washcloth. Apply a generous layer all over your skin and rinse it off.For maximum benefit, let it sit on the skin for 2-3 minutes then rinse off",
     ingredients: [
-      "Theobroma Cacao (Cocoa) Seed Butter",
-      "Cera Alba (Beeswax)",
-      "Prunus Amygdalus Dulcis (Sweet Almond) Oil",
-      "Vitamin E (Tocopherol)",
+      "Distilled water",
+      "Sodium c14-16 olefin Sulfonate",
+      "Cocamidopropyl betaine",
+      "Glycerin",
+      "Glycolic acid",
+      "Kojic acid",
+      "Mulberry extract",
+      "Papaya extract",
+      "Cationic guar",
+      "Hydroxyethylcellulose",
+      "Fragrance",
+      "Germal plus",
+      "EDTA",
+      "Mica",
     ],
+    extra:
+      "Because this is an exfoliating product containing an AHA, some lndividuals may experience their skin peeling after a while of use, you may want to dial down on the frequency of use to avoid over exfoliation.",
   },
   {
-    id: 4,
+    id: "4",
     slug: "revive-and-balance",
     name: "Revive & Balance Body Oil",
     category: "Body Oils",
@@ -79,19 +107,25 @@ export const products: Product[] = [
     image: "/RandB.jpg",
     dataAiHint: "cosmetic spray bottle",
     description:
-      "Soothe and refresh your skin instantly with our pure aloe vera facial mist.",
+      "The R & B body oil is a skin healer with a blend of nourishing plant oils and botanicals, the oil tackles skin issues like eczema, psoriasis, body acne, rashes etc. The oil restores the skin’s integrity by balancing its pH, calm inflammation and protects the skin’s microbiome.",
+
     longDescription:
-      "A quick spritz of our Calming Aloe Vera Mist provides instant relief for tired, irritated, or sun-exposed skin. Made with 99% pure Ghanaian aloe vera, this mist cools, soothes, and replenishes moisture levels throughout the day. Keep it in your bag for a refreshing boost anytime, anywhere.",
+      " Simply put a few drops in the palm of your hand, rub your hands together to warm the oil, and massage it into your damp skin immediately after a shower.",
     ingredients: [
-      "Aloe Barbadensis Leaf Juice",
-      "Glycerin",
-      "Rosa Damascena (Rose) Flower Water",
-      "Sodium Benzoate",
-      "Potassium Sorbate",
+      "Sunflower Oil",
+      "Shea Oil",
+      "Coconut Oil",
+      "Calendula Oil",
+      "Cassia Alata Oil",
+      "Olive Oil",
+      "Tea tree Oil",
+      "Vitamin E",
     ],
+    extra:
+      "Avoid or prevent excessive sun express while using this product and Keep product in a cool place away from sunligh",
   },
   {
-    id: 5,
+    id: "5",
     slug: "calma-body-wash",
     name: "Calma Body Wash",
     category: "Body Wash",
@@ -99,18 +133,26 @@ export const products: Product[] = [
     image: "/calina.jpg",
     dataAiHint: "body wash jar",
     description:
-      "A powerful serum with Vitamin C and Baobab to brighten and even skin tone.",
+      "As the name implies, this body wash was formulated with sensitive and irritated skin in mind to help soothe and calm skin conditions like inflammation, itchy skin, rashes etc. The goodness of this blend gives your skin the warm embrace it needs to refresh and be calm",
     longDescription:
-      "Achieve a truly radiant complexion with our Glow Face Serum. This lightweight, powerful formula combines the brightening effects of Vitamin C with the antioxidant-rich properties of Baobab oil. It targets dark spots, evens out skin tone, and protects against environmental stressors, revealing a brighter, more youthful glow.",
+      "Wet your skin and lather the body wash on a sponge or washcloth. Apply a generous layer all over your skin and rinse it off.For maximum benefit, let it sit on the skin for 2-3 minutes then rinse off.",
     ingredients: [
-      "Adansonia Digitata (Baobab) Seed Oil",
-      "Tetrahexyldecyl Ascorbate (Vitamin C)",
-      "Squalane",
-      "Simmondsia Chinensis (Jojoba) Seed Oil",
+      "Distilled water",
+      "Cocamidopropyl betaine",
+      "Sodium C14-16 olefin Sulfonate",
+      "Glycerin",
+      "Honey",
+      "Zinc oxide",
+      "Colloidal oats",
+      "Chamomile extract",
+      "Xanthan gum",
+      "Citric acid",
+      "Germal plus",
+      "EDTA",
     ],
   },
   {
-    id: 6,
+    id: "6",
     slug: "rejuva-body-oil",
     name: "Rejuva Body Oil",
     category: "Body Oils",
@@ -118,14 +160,22 @@ export const products: Product[] = [
     image: "/rejuva.jpg",
     dataAiHint: "cosmetic oil bottle",
     description:
-      "A luxurious blend of shea and baobab oil to deeply nourish and hydrate your skin.",
+      "This oil blend is an ultimate elixir for a vibrant youthful appearance. With top anti aging oils with unique fatty acid profiles that deeply moistures the skin, reducing the appearance of scars and wrinkles. Potent antioxidant astaxanthin and anti aging compound retinol firms and tones up the skin while simultaneously building up collagen with vitamin C.",
     longDescription:
-      "Our Revitalizing Shea Body Oil is a potent elixir designed to restore your skin's natural glow. Enriched with pure, cold-pressed shea and baobab oils from Ghana, this fast-absorbing formula provides intense hydration, improves skin elasticity, and leaves a silky, non-greasy finish. Perfect for all skin types.",
+      "Simply put a few drops in the palm of your hand, rub your hands together to warm the oil, and massage it into your damp skin immediately after a shower.",
     ingredients: [
-      "Butyrospermum Parkii (Shea) Oil",
-      "Adansonia Digitata (Baobab) Seed Oil",
-      "Vitamin E (Tocopherol)",
-      "Essential Oil Blend",
+      "Sunflower Oil",
+      "Baobab Oil",
+      "Castor Oil",
+      "Sesame Oil",
+      "Isoamyl laurate",
+      "Retinol Palmitate",
+      "Astaxanthin",
+      "Vitamin E",
+      "Fragrance",
     ],
+    extra: `Avoid or prevent excessive sun exposure while using this product and keep product in a cool place away from sunlight.
+
+Pregnant and breastfeeding women should avoid retinol or retinol derivatives products`,
   },
 ];

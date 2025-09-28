@@ -6,12 +6,14 @@ import { motion } from "framer-motion";
 import { Product } from "@/lib/data";
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart();
   return (
     <motion.div
       className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-card"
@@ -34,31 +36,33 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           </motion.div>
         </div>
-        <div className="p-4 border-t">
-          <h3 className="font-headline text-lg font-semibold text-primary truncate">
-            {product.name}
-          </h3>
-          <p className="text-sm text-muted-foreground mt-1">
-            {product.category}
-          </p>
-          <div className="flex justify-between items-center mt-4">
-            <p className="text-lg font-semibold text-primary">
-              &#8373;{product.price.toFixed(2)}
-            </p>
-            <Button
-              size="sm"
-              onClick={(e) => {
-                e.preventDefault();
-                // Placeholder for add to cart
-                console.log(`${product.name} added to cart`);
-              }}
-            >
-              <ShoppingCart className="mr-2 h-4 w-4" />
-              Add to Cart
-            </Button>
-          </div>
-        </div>
       </Link>
+      <div className="p-4 border-t">
+        <h3 className="font-headline text-lg font-semibold text-primary truncate">
+          {product.name}
+        </h3>
+        <p className="text-sm text-muted-foreground mt-1">{product.category}</p>
+        <div className="flex justify-between items-center mt-4">
+          <p className="text-lg font-semibold text-primary">
+            &#8373;{product.price.toFixed(2)}
+          </p>
+          <Button
+            size="sm"
+            onClick={() =>
+              addToCart({
+                id: product.id as string,
+                name: product.name,
+                price: product.price,
+                image: product.image,
+                quantity: 1,
+              })
+            }
+          >
+            <ShoppingCart className="mr-2 h-4 w-4" />
+            Add to Cart
+          </Button>
+        </div>
+      </div>
     </motion.div>
   );
 }

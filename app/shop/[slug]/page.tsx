@@ -53,18 +53,21 @@ export default function ProductDetailPage() {
                 {product.name}
               </h1>
               <p className="text-2xl font-semibold text-primary mt-4">
-                ${product.price.toFixed(2)}
+                &#8373;{product.price.toFixed(2)}
               </p>
 
               <Separator className="my-6" />
-
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                {product.description}
+              </p>
+              <Separator className="my-6" />
               <p className="text-lg text-foreground/80 leading-relaxed">
                 {product.longDescription}
               </p>
 
               <div className="mt-6">
                 <h3 className="font-semibold text-lg mb-2">Key Ingredients:</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
                   {product.ingredients.map((ingredient) => (
                     <li
                       key={ingredient}
@@ -76,6 +79,12 @@ export default function ProductDetailPage() {
                   ))}
                 </ul>
               </div>
+              <Separator className="my-6" />
+              {product.extra && (
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  {product.extra}
+                </p>
+              )}
 
               <div className="mt-auto pt-8">
                 <Button size="lg" className="w-full font-bold">
