@@ -42,6 +42,19 @@ export default function CartPage() {
         email: email, // ideally from logged-in user
         amount: Math.round(grossAmount * 100), // Paystack expects amount in kobo/pesewas
         metadata: {
+          customer: {
+            name,
+            email,
+            phone,
+          },
+          cart_items: cart.map((item) => ({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: item.quantity,
+            subtotal: item.price * item.quantity,
+          })),
+
           custom_fields: [
             {
               display_name: "Phone Number",

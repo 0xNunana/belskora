@@ -45,7 +45,7 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "skin-perfecting",
-    name: "Skin Perfecting Body Exfoliante",
+    name: "Skin Perfecting Body Exfoliant",
     category: "Scrubs",
     price: 160.0,
     image: "/perfecting.jpg",

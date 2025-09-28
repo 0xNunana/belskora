@@ -65,28 +65,16 @@ export default function ProductDetailPage() {
 
               <Separator className="my-6" />
 
-              <p className="text-lg text-foreground/80 leading-relaxed">
+              {/* <p className="text-lg text-foreground/80 leading-relaxed">
                 {product.description}
-              </p>
+              </p> */}
 
               <Accordion
                 type="single"
                 collapsible
                 className="w-full no-underline"
+                defaultValue="ingredients"
               >
-                {/* Description */}
-                <AccordionItem value="ritual">
-                  <AccordionTrigger className="no-underline">
-                    The Ritual
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <p className="mt-4 text-lg text-foreground/80 leading-relaxed">
-                      {product.longDescription}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-
-                {/* Ingredients */}
                 <AccordionItem value="ingredients">
                   <AccordionTrigger>Ingredients</AccordionTrigger>
                   <AccordionContent>
@@ -103,6 +91,29 @@ export default function ProductDetailPage() {
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
+                {/* Description */}
+                <AccordionItem value="whats-in-it-for-you">
+                  <AccordionTrigger className="no-underline">
+                    What's In It For You
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="mt-4 text-lg text-foreground/80 leading-relaxed">
+                      {product.description}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="ritual">
+                  <AccordionTrigger className="no-underline">
+                    The Ritual
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="mt-4 text-lg text-foreground/80 leading-relaxed">
+                      {product.longDescription}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Ingredients */}
 
                 {/* Extra */}
                 {product.extra && (
