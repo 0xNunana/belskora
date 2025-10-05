@@ -234,6 +234,31 @@ export default function Home() {
           </MotionWrapper>
         </div>
       </section>
+
+      <section className="mb-6">
+        <div className="container mx-auto p-4 ">
+          <MotionWrapper className="text-center ">
+            {/* Left side - image */}
+            <div className="w-full relative border border-gray-200 rounded-xl  bg-primary">
+              <img
+                src="/edit2.png"
+                alt="Three beautiful Black women representing Belskora Essentials"
+                className="object-cover rounded-2xl"
+              />{" "}
+              <div className="absolute top-1/2 right-2 md:right-5 transform -translate-y-1/2">
+                <h1 className="sm:text-3xl md:text-5xl font-semibold text-white leading-tight w-[230px] md:w-full">
+                  Overwhelmed with skincare?
+                </h1>
+                <h1 className="text-sm sm:text-xl md:text-3xl text-white/90 leading-tight w-[200px] md:w-full">
+                  Us too. It&apos;s why Belskora Essentials began.
+                </h1>
+              </div>
+            </div>
+
+            {/* Right side - text */}
+          </MotionWrapper>
+        </div>
+      </section>
     </div>
   );
 }
