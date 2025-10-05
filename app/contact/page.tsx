@@ -149,12 +149,12 @@ export default function ContactPage() {
                   </h3>
                   <div className="space-y-3 text-muted-foreground">
                     <Link
-                      href="mailto:belskoraessentials@gmail.com"
+                      href="mailto:belskoraessential@gmail.com"
                       target="_blank"
                       className="flex items-center gap-4"
                     >
                       <Mail className="h-5 w-5 text-primary/70" />
-                      <span>belskoraessentials@gmail.com</span>
+                      <span>belskoraessential@gmail.com</span>
                     </Link>
 
                     <Link
