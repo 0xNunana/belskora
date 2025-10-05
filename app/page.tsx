@@ -250,7 +250,7 @@ export default function Home() {
                   Overwhelmed with skincare?
                 </h1>
                 <h1 className="text-sm sm:text-xl md:text-3xl text-white/90 leading-tight w-[200px] md:w-full">
-                  Us too. It&apos;s why Belskora Essentials began.
+                  Us too. It&apos;s why Belsk&oacute;ra Essentials began.
                 </h1>
               </div>
             </div>
