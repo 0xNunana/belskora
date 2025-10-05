@@ -72,7 +72,7 @@ export const products: Product[] = [
   {
     id: "3",
     slug: "clair-body-wash",
-    name: "Clair Body Wash",
+    name: "Claire Body Wash",
     category: "Body Wash",
     price: 250.0,
     image: "/clair.jpg",
@@ -183,5 +183,34 @@ export const products: Product[] = [
 
 Pregnant and breastfeeding women should avoid retinol or retinol derivatives products`,
     nb: "Pregnant and breastfeeding women cannot use retinol or it’s derivatives and this product is not an exemption hence, it should be avoided",
+  },
+];
+
+export const featuredProducts: Product[] = [
+  products[5],
+  products[1],
+  products[4],
+];
+
+export const values = [
+  // {
+  //   title: "Purity",
+  //   description:
+  //     "We use only the finest, all‑natural ingredients sourced ethically and sustainably.",
+  // },
+  {
+    title: "Tradition",
+    description:
+      "Our formulas are inspired by generations of trusted botanical wisdom.",
+  },
+  {
+    title: "Efficacy",
+    description:
+      "Creating products that are not just clean, but deliver visible results.",
+  },
+  {
+    title: "Science Backed",
+    description:
+      "Our practices are guided by research and innovation to ensure safety, effectiveness, and sustainability.",
   },
 ];

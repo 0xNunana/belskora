@@ -8,10 +8,10 @@ export default function ShopPage() {
       <MotionWrapper>
         <section className="bg-secondary/50 py-6 md:py-16">
           <div className="container mx-auto text-center px-4">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-headline font-bold text-primary">
               Our Collection
             </h1>
-            <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-foreground/80">
+            <p className="mt-4 max-w-2xl mx-auto sm:text-lg md:text-xl text-foreground/80">
               Explore our full range of all-natural, Ghanaian-inspired skincare
               products.
             </p>

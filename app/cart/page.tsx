@@ -13,6 +13,8 @@ export default function CartPage() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
+  const [address, setAddress] = useState("");
+  const [deliveryAddress, setDeliveryAddress] = useState(false);
   const [PaystackPop, setPaystackPop] = useState<any>(null);
   useEffect(() => {
     // Dynamically import only on client
@@ -87,7 +89,26 @@ export default function CartPage() {
           const data = await res.json();
 
           if (data.status === "success") {
-            alert("Payment verified successfully!");
+            await fetch("/api/notify-payment", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                reference: transaction.reference,
+                customer: { name, email, phone, address },
+                cart_items: cart.map((item) => ({
+                  id: item.id,
+                  name: item.name,
+                  price: item.price,
+                  quantity: item.quantity,
+                  subtotal: item.price * item.quantity,
+                })),
+                grossAmount,
+                total,
+                fee: grossAmount - total,
+                timestamp: Date.now(),
+              }),
+            });
+            setLoading(false);
             clearCart();
           } else {
             alert("Payment verification failed.");
@@ -177,6 +198,27 @@ export default function CartPage() {
                 onChange={(e) => setPhone(e.target.value)}
                 required
               />
+              <hr />
+              <div className="flex items-center justify-between">
+                <p>Do you prefer a delivery service ?</p>
+                <input
+                  type="checkbox"
+                  onChange={(e) => setDeliveryAddress(e.target.checked)}
+                />
+              </div>
+              {deliveryAddress && (
+                <div className="  mt-6 space-y-4">
+                  <label className="block text-sm font-medium">Address</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your address"
+                    className="w-full p-2 border rounded"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                  />
+                  <p>NB: Delivery service comes at a call. Thank you</p>
+                </div>
+              )}
             </div>
             <div className="mt-6 flex justify-between items-center">
               <div>

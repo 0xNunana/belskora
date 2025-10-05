@@ -25,9 +25,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <Link href="/" className="ml-2 mr-6 flex items-center space-x-2">
           <span className="font-bold text-lg font-headline">
-            Belsk&oacute;ra Esentials
+            Belsk&oacute;ra Essentials
           </span>
         </Link>
 
