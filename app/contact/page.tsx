@@ -3,10 +3,10 @@
 import { MotionWrapper } from "@/components/motion-wrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
+
 import Link from "next/link";
 import { useState } from "react";
 

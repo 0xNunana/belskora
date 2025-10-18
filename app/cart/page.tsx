@@ -5,10 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 //import PaystackPop from "@paystack/inline-js";
 import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2, Trash2 } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 export default function CartPage() {
-  const { cart, removeFromCart, clearCart } = useCart();
+  const { cart, removeFromCart, clearCart, updateQuantity } = useCart();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -26,7 +27,7 @@ export default function CartPage() {
     process.env.NEXT_PUBLIC_PAYSTACK_FEE || "0.0195"
   );
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const grossAmount = total / (1 - paystackFeeRate);
+  // const grossAmount = total / (1 - paystackFeeRate);
 
   const handleCheckout = () => {
     if (!PaystackPop) return;
@@ -42,7 +43,7 @@ export default function CartPage() {
       paystack.newTransaction({
         key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY!, // safe to expose
         email: email, // ideally from logged-in user
-        amount: Math.round(grossAmount * 100), // Paystack expects amount in kobo/pesewas
+        amount: Math.round(total * 100), // Paystack expects amount in kobo/pesewas
         metadata: {
           customer: {
             name,
@@ -56,7 +57,7 @@ export default function CartPage() {
             quantity: item.quantity,
             subtotal: item.price * item.quantity,
           })),
-
+          delivery: deliveryAddress ? "Delivery" : "Pickup",
           custom_fields: [
             {
               display_name: "Phone Number",
@@ -102,9 +103,9 @@ export default function CartPage() {
                   quantity: item.quantity,
                   subtotal: item.price * item.quantity,
                 })),
-                grossAmount,
+
                 total,
-                fee: grossAmount - total,
+
                 timestamp: Date.now(),
               }),
             });
@@ -140,10 +141,7 @@ export default function CartPage() {
         <div className=" grid md:grid-cols-3 gap-4">
           <ul className="p-4 col-span-2">
             {cart.map((item) => (
-              <li
-                key={item.id}
-                className="flex items-center justify-between py-2 border-b"
-              >
+              <li key={item.id} className="flex  justify-between py-2 border-b">
                 <div className="flex gap-2">
                   <Image
                     src={item.image}
@@ -158,13 +156,36 @@ export default function CartPage() {
                     </p>
                   </div>
                 </div>
-
-                <Button
-                  variant="outline"
-                  onClick={() => removeFromCart(item.id)}
-                >
-                  Remove
-                </Button>
+                <div className="space-y-4 flex flex-col justify-between">
+                  <div className="flex items-center gap-2">
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                      disabled={item.quantity <= 1}
+                    >
+                      −
+                    </Button>
+                    <span className="font-medium w-6 text-center">
+                      {item.quantity}
+                    </span>
+                    <Button
+                      size="icon"
+                      // variant="outline"
+                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                    >
+                      +
+                    </Button>
+                  </div>
+                  <div className="flex justify-end">
+                    <Button
+                      variant="outline"
+                      onClick={() => removeFromCart(item.id)}
+                    >
+                      <Trash2 color="red" />
+                    </Button>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
@@ -201,35 +222,38 @@ export default function CartPage() {
               <hr />
               <div className="flex items-center justify-between">
                 <p>Do you prefer a delivery service ?</p>
-                <input
-                  type="checkbox"
-                  onChange={(e) => setDeliveryAddress(e.target.checked)}
+
+                <Switch
+                  checked={deliveryAddress}
+                  onCheckedChange={setDeliveryAddress}
                 />
               </div>
-              {deliveryAddress && (
-                <div className="  mt-6 space-y-4">
+              {deliveryAddress ? (
+                <div className="mt-4 space-y-2">
                   <label className="block text-sm font-medium">Address</label>
                   <input
                     type="text"
-                    placeholder="Enter your address"
+                    placeholder="Enter your delivery address"
                     className="w-full p-2 border rounded"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                   />
-                  <p>NB: Delivery service comes at a call. Thank you</p>
+                  <p className=" mt-4 bg-green-100 p-4 text-gray-600">
+                    Kindly call <strong>0558692639</strong> to arrange delivery
+                    for your order.
+                  </p>
                 </div>
+              ) : (
+                <p className=" text-gray-600 mt-4 bg-green-100 p-4">
+                  Kindly call <strong>0558692639</strong> for directions to the
+                  pickup point.
+                </p>
               )}
             </div>
             <div className="mt-6 flex justify-between items-center">
               <div>
-                <p className="text-xl font-bold">
-                  Grand Total: &#8373;{grossAmount.toFixed(2)}
-                </p>
                 <p className="text-sm text-gray-600">
                   Item Total: &#8373;{total.toFixed(2)}
-                </p>
-                <p className="text-sm text-gray-600">
-                  Txn Fees: &#8373;{(grossAmount - total).toFixed(2)} (approx)
                 </p>
               </div>
               <Button onClick={handleCheckout} size="lg" className="font-bold">

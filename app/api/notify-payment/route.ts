@@ -12,9 +12,9 @@ export async function POST(req: Request) {
       reference,
       customer,
       cart_items,
-      grossAmount,
+
       total,
-      fee,
+
       timestamp,
     } = body;
 
@@ -24,9 +24,9 @@ export async function POST(req: Request) {
       <p><strong>Email:</strong> ${customer.email}</p>
       <p><strong>Phone:</strong> ${customer.phone}</p>
       <p><strong>Reference:</strong> ${reference}</p>
-      <p><strong>Total Amount:</strong> ₵${grossAmount.toFixed(2)}</p>
+    
       <p><strong>Net:</strong> ₵${total.toFixed(2)}</p>
-      <p><strong>Fees:</strong> ₵${fee.toFixed(2)}</p>
+
       <p><strong>Date:</strong> ${new Date(timestamp).toLocaleString()}</p>
       <hr/>
       <p><strong>Address: ${customer.address}</strong></p>

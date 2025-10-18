@@ -7,6 +7,7 @@ import { Product } from "@/lib/data";
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useState } from "react";
 
 interface ProductCardProps {
   product: Product;
@@ -14,6 +15,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
+  const [added, setAdded] = useState(false);
   return (
     <motion.div
       className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-card"
@@ -48,15 +50,17 @@ export function ProductCard({ product }: ProductCardProps) {
           </p>
           <Button
             size="sm"
-            onClick={() =>
+            onClick={() => {
               addToCart({
                 id: product.id as string,
                 name: product.name,
                 price: product.price,
                 image: product.image,
                 quantity: 1,
-              })
-            }
+              });
+              setAdded(true);
+            }}
+            disabled={added}
           >
             <ShoppingCart className="mr-2 h-4 w-4" />
             Add to Cart

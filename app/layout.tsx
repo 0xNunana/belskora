@@ -7,8 +7,9 @@ import { CartProvider } from "@/context/CartContext";
 //import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Belskora Essentials",
-  description: "Premium natural cosmetics from the heart of Ghana.",
+  title: "Belskóra Essentials",
+  description:
+    "High-performance botanical and science backed skincare from the heart of Ghana",
 };
 
 export default function RootLayout({
